@@ -17,10 +17,10 @@ high = [0, 0]
 speed(0)
 hideturtle()
 circle_lines = 100
-tracer(10)
-file_dir = "svgTool/example4.svg"
+tracer(1000)
+file_dir = "svgTool/example6.svg"
 progress_digits = 1
-pixelart_size_multipler = 100
+pixelart_size_multipler = 1
 
 #Parsing function
 objects = parsesvg(file_dir)
@@ -88,6 +88,11 @@ for object in objects:
         pendown()
         circle(object.radius, steps=circle_lines)
     elif object.name == "rectangle":
+        if progress_digits == 0:
+            title(f'Drawing \"{os.path.basename(file_dir)}\"; {round(objects.index(object)/len(objects)*100)}%')
+        else: 
+            title(f'Drawing \"{os.path.basename(file_dir)}\"; {round(objects.index(object)/len(objects)*100, progress_digits)}%')
+
         if objects.index(object) == 0:
             penup()
         if object.fill != None and object.fill != "none":

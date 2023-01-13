@@ -32,3 +32,15 @@ Progress Information:
         Object #31/313 : Index of the object currently being drawn out of the total
         (76%) : Object progress
     Number of digits after decimal point can be adjusted using the 'progress_digits' variable in the main.py file
+
+
+Example Files:
+    Standard Files:
+        - example1.svg, Contains a picture of a donkey from the movie Shrek
+        - example2.svg, Contains a drawing of a building site and city with the word "Brand" in the middle
+        - example3.svg, Contains a drawing of a colorful and intricate "Dia De Los Muertos" skull
+    
+    Pixel Art:
+        - example4.svg, Contains pixel art of a simple dragon
+        - example5.svg, Contains pixel art of a campfire
+        - example6.svg, Contains pixel art of Messi kissing the world cup trophy
