@@ -1,3 +1,5 @@
+!!OUTDATED!!
+
 Illustrator Export:  
     Firstly, create any file in illustrator. 
     Note that you cannot use curves, only straight lines. The only exception to that is circles which cannot be ovals.
@@ -26,11 +28,12 @@ Illustrator Export:
 
 
 Progress Information:
-    Drawing "example1.svg"; 13.4%; Object #31/313 (76%)
+    Drawing "example1.svg"; 13.4%; Object #31/313 (76%); Object Shape: polygon
         "example1.svg" : Name of file with extension
         13.4% : Overall file progress
         Object #31/313 : Index of the object currently being drawn out of the total
-        (76%) : Object progress
+        (76%) : Object progress, only displayed if the object is a polygon shape
+        "Object Shape: polygon" : Shape type, rectangle or polygon
     Number of digits after decimal point can be adjusted using the 'progress_digits' variable in the main.py file
 
 

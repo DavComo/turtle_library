@@ -134,6 +134,7 @@ def parsesvg(file_dir : str) -> list:
     circle_ls = []
 
     styles = file.getElementsByTagName('styles')
+    """
     for polygon in polygons:
         polygon_ls.append(parsepolygon(polygon))
 
@@ -142,14 +143,25 @@ def parsesvg(file_dir : str) -> list:
 
     for circle in circles:
         circle_ls.append(parsecircle(circle))
-
+    """
+    elements = file.childNodes[0].childNodes
+    print(elements[0].data)
+    for element in elements:
+        try:
+            if element.data == '\n  ' or element.data == '\n':
+                elements.pop(elements.index(element))
+        except:
+            continue
+    
     returnable_var = []
-    for i in polygon_ls:
-        returnable_var.append(i)
-    for i in rectangle_ls:
-        returnable_var.append(i)
-    for i in circle_ls:
-        returnable_var.append(i)
+    for element in elements:
+        if element.localName == 'polygon':
+            returnable_var.append(parsepolygon(element))
+        elif element.localName == 'rect':
+            returnable_var.append(parserectangle(element))
+        elif element.localName == 'circle':
+            returnable_var.append(parsecircle(element))
+    
     return returnable_var
     
 def getcanvassize(file_dir : str) -> list:
